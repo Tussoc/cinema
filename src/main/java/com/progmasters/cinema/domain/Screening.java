@@ -26,7 +26,7 @@ public class Screening {
     @Column(nullable = false)
     private Integer totalSeatCount;
 
-    @Column
+    @Column(columnDefinition = "TEXT")
     private String pictureUrl;
 
 
