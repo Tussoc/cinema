@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "screening")
@@ -17,17 +19,18 @@ public class Screening {
     @Column
     private Long id;
 
-    @Column(nullable = false)
+    @Column()
     private String title;
 
-    @Column(nullable = false)
+    @Column()
     private LocalDateTime screeningDate;
 
-    @Column(nullable = false)
+    @Column()
     private Integer totalSeatCount;
 
     @Column(columnDefinition = "TEXT")
     private String pictureUrl;
 
-
+    @OneToMany(mappedBy = "screening")
+    private List<Reservation> reservationList=new ArrayList<>();
 }
