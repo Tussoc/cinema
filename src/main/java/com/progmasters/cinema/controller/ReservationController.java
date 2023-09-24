@@ -27,6 +27,7 @@ public class ReservationController {
     @PostMapping
     public ResponseEntity<Void> saveReservation(@RequestBody @Valid ReservationCreationCommandDto command) {
         reservationService.saveReservation(command);
+        log.info("HTTP request, post-> /api/reservations body: " + command.toString());
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 

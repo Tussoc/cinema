@@ -10,7 +10,7 @@ public class ScreeningCreateCommandDto {
 
     private String title;
     private LocalDateTime screeningDate;
-    @Min(value = 10, message = "ASD")
+    @Min(value = 10)
     private Integer totalSeatCount;
     private String pictureUrl;
 
